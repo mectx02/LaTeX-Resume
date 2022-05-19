@@ -18,9 +18,7 @@ Things such as previous jobs, projects you've worked on, etc. are typically divi
 
 
 ## How do I make the PDF?
-I developed this mainly using VSCode, so if you're using that, there should be some default build tasks for you to use that should make it easy to compile. The default build tasks builds up both the cover letter and the resume into one file, while the `build independent` creates them separately. 
-
-If you're using something else, then the Makefile should still work. Just call `make main` for both the cover letter and resume together, or `make independent` for two separate documents.
+Just call `make main` for both the cover letter and resume together, or `make independent` for two separate documents.
 
 
 ## "It doesn't look that great!"
