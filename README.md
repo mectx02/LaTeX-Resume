@@ -29,3 +29,5 @@ Well, it's LaTeX. And part of the point of this was to be simple - not convolute
 ( So far no one's complained, but I'm just anticipating someone getting angry about how it looks. )
 
 If you think it's ugly and want to change it, there are tons of helpful documentation around that you can use to customize it, such as [overleaf](https://overleaf.com) and [the makers themselves](https://latex-project.org/help).
+
+If you've just had a look at main.pdf (a really basic output of what it can be), just try filling it out with your information first before you make any big decisions. It'll probably look better when it's filled in.
