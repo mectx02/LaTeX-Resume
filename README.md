@@ -14,7 +14,7 @@ This works as a base LaTeX project to help you get started. Just clone the repos
 There are two different types of headers: `header_short` and `header`. `header_short` simply has the name and job description, while `header` extends it by adding in contact information. You can view how to add your contact information in the `header` and `header_short` files directly.
 
 ### Sections
-Things such as previous jobs, projects you've worked on, etc. are typically divided into sections. There are a few pre-defined pages that you can use, such as `projects`, `cover_letter`, `education`, etc. that seem to be pretty common amongst typical resumes. If you need more than that, however, `activities.tex` is blank, so you can copy that to your heart's content.
+Things such as previous jobs, projects you've worked on, etc. are typically divided into sections. There are a few pre-defined pages that you can use (located in the sections directory), such as `projects`, `cover_letter`, `education`, etc. that seem to be pretty common amongst typical resumes. If you need more than that, however, `activities.tex` is blank, so you can copy that to your heart's content.
 
 
 ## How do I make the PDF?
