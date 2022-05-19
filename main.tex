@@ -1,0 +1,114 @@
+% Project Name:         Resume
+% Project Developer:    Mitchell Case
+%                       mectx02@icloud.com
+% Initial Creation:     5/18/2022
+
+
+
+%
+% Preamble
+%
+\documentclass[11pt, letterpaper]{article}
+
+
+% Package Imports
+
+% Used for general project management
+\usepackage[subpreambles=true]{standalone}       
+\usepackage{import}
+
+\usepackage{geometry}       % Used for setting all the page margins
+
+\usepackage{tabularx}       % For use in header.tex; formatting purposes
+\usepackage{array}          % For use in header.tex; formatting purposes
+\usepackage{fontawesome5}   % For use in header.tex; getting the icons
+\usepackage{hyperref}       % For use in header.tex; adding links
+
+
+%
+% Page/paragraph formatting
+%
+
+% First set the page dimensions
+\geometry{
+    tmargin=0.75in,
+    bmargin=0.75in,
+    lmargin=0.75in,
+    rmargin=0.75in
+}
+
+% Remove any section/page numbering ('cause it looks ugly on a resume)
+\makeatletter
+\renewcommand{\@seccntformat}[1]{}
+\makeatother
+
+\pagestyle{empty}
+
+
+% Remove any possibility of indenting the paragraphs (we can change it
+% on later portions independently if we so choose)
+\setlength{\parindent}{0pt}
+
+
+% Format the hyperlinks so that they're not just blue clickable boxes
+% but a subtle link
+\hypersetup{
+    colorlinks=true,
+    urlcolor=black
+}
+
+
+% 
+% Document Content
+%
+
+\begin{document}
+
+%TODO: there's a bug where the short header will not appear correctly
+%TODO: for whatever reason... you might need two pages for this to work
+%TODO: correctly, but that's just a guess...
+\import{sections/}{header}
+\import{sections/}{cover_letter}
+
+\pagebreak
+
+
+% This resets the spacing from the cover letter formatting
+\setlength{\parskip}{0pt}
+
+
+\import{sections/}{header}
+
+\import{sections/}{summary}
+
+\section{Employment}
+\import{sections/}{employment}
+
+\section{Education}
+\import{sections/}{education}
+
+\section{Awards}
+\import{sections/}{awards}
+
+\section{Skills}
+\import{sections/}{skills}
+
+\section{Activities}
+\import{sections/}{activities}
+
+
+% To add another page, insert a pagebreak, then implement the
+% header_short file with
+% 
+% \import{sections/}{header_short}
+
+\section{Projects}
+\import{sections/}{projects}
+
+\pagebreak
+
+\import{sections/}{header_short}
+
+
+
+\end{document}

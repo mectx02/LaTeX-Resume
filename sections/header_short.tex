@@ -1,0 +1,41 @@
+% 
+% Preamble
+% 
+\documentclass[class=article, crop=false]{standalone}
+
+\usepackage{import}
+\usepackage{array}
+\usepackage{tabularx}
+
+%
+% Document Content
+%
+\begin{document}
+
+
+\begin{centering}
+
+    % This table provides name and job position info
+    % Coding this looks weird because of the way that it should be presented;
+    % just change the numbers after the \hsize command below to get it looking
+    % the way that you want it to
+    \begin{tabularx}{\textwidth}{
+        >{\raggedright\hsize=.5\hsize\linewidth=\hsize}X
+        >{\raggedleft\hsize=.5\hsize\linewidth=\hsize}X
+    } 
+
+    \textbf{\Huge Your name here} &
+    \textbf{\Large Some ideal job thing}
+
+    \end{tabularx}
+
+\end{centering}
+
+
+% Since this file is expected to be followed by content, we remove any
+% vertical space so that there is more flexibility when working with 
+% this particular file. 
+
+\vspace{0mm}
+
+\end{document}
