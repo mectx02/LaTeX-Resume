@@ -5,6 +5,8 @@ A (hopefully) simple and easy-to-use resume builder using the LaTeX compiler eng
 ## 'Install'
 If you don't have LaTeX installed, you should probably install it; otherwise, this isn't going to work well. [Click here](https://www.latex-project.org/get/) to see how for your operating system.
 
+In addition to having the LaTeX base, this document uses font-awesome graphics for the little emoticons in the header. Install `font-awesome` via your package manager, or make sure that you have the `texlive-fonts-extra` something-or-other installed when you install LaTeX for the first time.
+
 This works as a base LaTeX project to help you get started. Just clone the repository and edit what you need. Hopefully there are some sane defaults provided. 
 
 
