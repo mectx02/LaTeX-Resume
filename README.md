@@ -1,33 +1,78 @@
 # LaTeX Resume
-A (hopefully) simple and easy-to-use resume builder using the LaTeX compiler engine.
+A (hopefully) simple and easy-to-use resume builder using the LaTeX compiler 
+engine; built without the use of a complex .cls file.
 
 
 ## 'Install'
-If you don't have LaTeX installed, you should probably install it; otherwise, this isn't going to work well. [Click here](https://www.latex-project.org/get/) to see how for your operating system.
+In terms of operating systems, this won't work on Windows. Sorry. Works on 
+macOS and Linux just fine, though, so if you're on Windows, I would recommend 
+getting WSL installed so that you can compile with ease. 
 
-In addition to having the LaTeX base, this document uses font-awesome graphics for the little emoticons in the header. Install `font-awesome` via your package manager, or make sure that you have the `texlive-fonts-extra` something-or-other installed when you install LaTeX for the first time.
+(Unless you want to go the hard route; you do you bud.)
 
-This works as a base LaTeX project to help you get started. Just clone the repository and edit what you need. Hopefully there are some sane defaults provided. 
+If you don't have LaTeX installed, you should probably install it; otherwise, 
+I don't think you're going to get much use out of this. In terms of a TeX 
+engine, TinyTeX has a pretty good balance of minimalism and everything you need 
+to get started. See the project 
+[here](https://github.com/rstudio/tinytex-releases).
+
+In other TeX requirements, you'll need the following packages:
+ - fontawesome5
+ - standalone
+ - import
+ - enumitem
+ - some other random file that I can't remember off the top of my head. If 
+   you're using the TinyTeX distribution, it should tell you what it is, then 
+   just use `tlmgr install [blah]` to install it.
+
+With regards to other utilities, `pdftk` is required in order to concatenate 
+the resulting generated pdf files together. `make` is used to help execute the 
+compiling commands. You can likely grab these from your package manager. (On 
+macOS, if you have Homebrew installed, grab the `pdftk-java` version.)
+
+This works as a base LaTeX project to help you get started. Just clone the 
+repository and edit what you need. Just make sure that the default text is 
+removed before you submit anything for real.
 
 
 ## How it's structured
 
 ### Headers
-There are two different types of headers: `header_short` and `header`. `header_short` simply has the name and job description, while `header` extends it by adding in contact information. You can view how to add your contact information in the `header` and `header_short` files directly.
+Each page should have your name across the top; the first page of the cover 
+letter and resume should also have your contact info. These are provided with 
+the `name.tex` and `contact.tex` files located in the `sections` folder. You can 
+edit those to your needs.
 
 ### Sections
-Things such as previous jobs, projects you've worked on, etc. are typically divided into sections. There are a few pre-defined pages that you can use (located in the sections directory), such as `projects`, `cover_letter`, `education`, etc. that seem to be pretty common amongst typical resumes. If you need more than that, however, `activities.tex` is blank, so you can copy that to your heart's content.
+Things such as previous jobs, projects you've worked on, etc. are typically 
+divided into sections. There are a few pre-defined pages that you can use 
+(located in the sections directory), such as `projects`, `cover_letter`, 
+`education`, etc. that seem to be pretty common amongst typical resumes. If you 
+need more than that, however, `activities.tex` is blank, so you can copy that to
+ your heart's content.
 
 
 ## How do I make the PDF?
-Just call `make main` for both the cover letter and resume together, or `make independent` for two separate documents.
+Just call `make`. It auto generates three PDF files: a resume, a cover letter, 
+and a combined file. (All three are generated to PDF files since that seems to 
+be the most popular document format.)
+
+Shoud you need to just make one or the other, you can call `make resume` or 
+`make cover` for just one of those documents. The combined document should 
+update as well.
+
+Make a mistake? Call `make clean` to erase all compiled documents and start from 
+scratch.
+
+Just need to finalize the PDF files? Call `make finish` and it should just 
+generate the finalized PDF files without too much headache.
 
 
-## "It doesn't look that great!"
-Well, it's LaTeX. And part of the point of this was to be simple - not convoluted. 
+## How do I use LaTeX?
 
-( So far no one's complained, but I'm just anticipating someone getting angry about how it looks. )
+There's lots of great resouces that you can use to get you started. 
+[Overleaf](https://www.overleaf.com) is a pretty good resource for just the 
+basics of getting started. Honestly, though, I think you can just start 
+overwriting some of the files and seeing what the result is. Just make sure to 
+compile the document with `make` when you're finished.
 
-If you think it's ugly and want to change it, there are tons of helpful documentation around that you can use to customize it, such as [overleaf](https://overleaf.com) and [the makers themselves](https://latex-project.org/help).
-
-If you've just had a look at main.pdf (a really basic output of what it can be), just try filling it out with your information first before you make any big decisions. It'll probably look better when it's filled in.
