@@ -1,0 +1,101 @@
+% Project Name:         Resume (Independent)
+% Project Developer:    Mitchell Case
+%                       mectx02@icloud.com
+% Initial Creation:     5/18/2022
+
+
+
+%
+% Preamble
+%
+\documentclass[10.5pt]{article}
+
+
+% Package Imports
+
+% Used for general project management
+\usepackage[subpreambles=true]{standalone}       
+\usepackage{import}
+
+\usepackage[margin=0.5in]{geometry}       % Used for setting all the page margins
+
+\usepackage{tabularx}       % For use in header.tex; formatting purposes
+\usepackage{array}          % For use in header.tex; formatting purposes
+\usepackage{fontawesome5}   % For use in header.tex; getting the icons
+\usepackage{hyperref}       % For use in header.tex; adding links
+
+\usepackage{enumitem}
+
+%
+% Page/paragraph formatting
+%
+
+% Remove any section/page numbering ('cause it looks ugly on a resume)
+\makeatletter
+\renewcommand{\@seccntformat}[1]{}
+\makeatother
+
+\pagestyle{empty}
+
+
+\newcommand{\split}{\vspace{0.4cm}}
+
+
+% Remove any possibility of indenting the paragraphs (we can change it
+% on later portions independently if we so choose)
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0pt}
+
+
+% Format the hyperlinks so that they're not just blue clickable boxes
+% but a subtle link
+\hypersetup{
+    colorlinks=true,
+    urlcolor=black
+}
+
+
+% Change the bullet spacing so that there are no gaps before/after the start/end
+% of bullet items
+
+\setlist[itemize]{noitemsep, topsep=0pt, leftmargin=*}
+
+% 
+% Document Content
+%
+
+\begin{document}
+
+
+\import{sections/}{name}
+\import{sections/}{contact}
+\import{sections/}{summary}
+
+
+\section{Education}
+\import{sections/}{education}
+
+\section{Experience}
+\import{sections/}{employment}
+
+\section{Awards}
+\import{sections/}{awards}
+
+\section{Volunteer Work}
+\import{sections/}{volunteering}
+
+%\section{Certifications}
+%\import{sections/}{certifications}
+
+\section{Skills}
+\import{sections/}{skills}
+
+% \section{Projects}
+% \import{sections/}{projects}
+
+
+% \section{Activities}
+% \import{sections/}{activities}
+
+
+\end{document}

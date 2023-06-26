@@ -6,6 +6,8 @@
 
 \setlength{\parskip}{8pt}
 
+\newcommand{\email}{your\_email.address@domain.com}
+
 %
 % Document Content
 %
@@ -13,9 +15,50 @@
 
 Hi.
 
-This is a sample cover letter that I just wrote to demonstrate what this looks like in general.
-You may find that some other options may tend to work better for your personal tastes, and that's
-okay. Feel free to customize this to your needs.
+This is a sample cover letter that I just wrote to demonstrate what this looks 
+like in general. You may find that some other options may tend to work better 
+for your personal tastes, and that's okay. Feel free to customize this to your 
+needs.
+
+Hopefully this project template is easy to understand how to use. In case of 
+it not making sense, though, here's a quick rundown:
+\begin{enumerate}
+    \item The cover letter and resume .tex files should not be edited --- those 
+          are mostly set and forget. Various sections are edited separately in 
+          the \verb|sections| folder and then imported into the major document.
+          I would recommend against touching the \verb|cover.tex| file since 
+          it's highly unlikely that you would need to change something in there.
+          \verb|resume.tex| does need a little more customization in the sense 
+          that you can add/delete sections that you feel are relevant/irrelevant 
+          to you.
+    
+    \item You are free to create/delete/manipulate the importable sections as you 
+          see fit. I've left the defaults pretty blank so that you can see how 
+          a recommended styling should be done, but you can use whatever styling
+          you desire.
+
+    \begin{itemize}
+         \item There's no \verb|.cls| file - everything is defined in standard 
+          \verb|.tex| files and then imported into the two documents. Yes, this 
+          means that there's more for you to do when customizing the items, but 
+          I think it makes for a simpler project and easier to understand 
+          interface for document creation.
+    \end{itemize}
+
+    \item When you're ready to compile a document, call \verb|make|, and it 
+          should create three different pdf files. If it doesn't, you might need
+          to install a utility called \verb|pdftk|, which is used to concatenate 
+          the resume and cover letter file together.
+
+    \begin{itemize}
+        \item In the makefile, there's a variable called \verb|NAME| that you 
+        will need to edit in order to rename the files to your name. It's 
+        located at the very top of the makefile - just put your normal name in 
+        there and \verb|make| should take care of the rest.
+    \end{itemize}
+\end{enumerate}
+
+Hopefully that's all you should really need to know. 
 
 Below is a sample finisher as an example.
 
@@ -28,7 +71,7 @@ Sincerely,
 
 Jane Q. Taxpayer
 
-\href{mailto:email@domain.com}{email@domain.com}
+\href{mailto:\email}{\email}
 
 (555) 555-1234
 
