@@ -15,23 +15,23 @@ main:
 
 
 resume:
+	pdflatex resume.tex
+	pdflatex resume.tex
 	rm -rfv *.aux
 	rm -rfv *.log
 	rm -rfv *.out
-	rm -rfv *.sta
-	pdflatex resume.tex
-	pdflatex resume.tex
+	rm -rfv *.sta	
 	pdftk "$(NAME) - Cover Letter.pdf" resume.pdf cat output "$(NAME).pdf"
 	mv resume.pdf "$(NAME) - Resume.pdf"
 
 
 cover:
+	pdflatex cover.tex
+	pdflatex cover.tex
 	rm -rfv *.aux
 	rm -rfv *.log
 	rm -rfv *.out
 	rm -rfv *.sta
-	pdflatex cover.tex
-	pdflatex cover.tex
 	pdftk cover.pdf "$(NAME) - Resume.pdf" cat output "$(NAME).pdf"
 	mv resume.pdf "$(NAME) - Cover Letter.pdf"
 
