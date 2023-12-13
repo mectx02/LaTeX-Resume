@@ -21,9 +21,7 @@ In other TeX requirements, you'll need the following packages:
  - standalone
  - import
  - enumitem
- - some other random file that I can't remember off the top of my head. If 
-   you're using the TinyTeX distribution, it should tell you what it is, then 
-   just use `tlmgr install [blah]` to install it.
+ - svn-prov
 
 With regards to other utilities, `pdftk` is required in order to concatenate 
 the resulting generated pdf files together. `make` is used to help execute the 
