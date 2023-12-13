@@ -1,51 +1,42 @@
 NAME=MAKEFILE_SAYS_EDIT_ME
 
 main:
-	pdflatex cover.tex
-	pdflatex cover.tex
-	pdflatex resume.tex
-	pdflatex resume.tex
-	rm -rfv *.aux
-	rm -rfv *.log
-	rm -rfv *.out
-	rm -rfv *.sta
-	pdftk cover.pdf resume.pdf cat output "$(NAME).pdf"
-	mv resume.pdf "$(NAME) - Resume.pdf"
-	mv cover.pdf "$(NAME) - Cover Letter.pdf"
+	if [ ! -d "build" ]; then mkdir build; fi
+	if [ ! -f "build/cover.pdf" ]; then \
+		pdflatex -output-directory build cover.tex; \
+	fi
+	pdflatex -output-directory build cover.tex
+	if [ ! -f "build/resume.pdf" ]; then \
+		pdflatex -output-directory build resume.tex; \
+	fi
+	pdflatex -output-directory build resume.tex
+	pdftk build/cover.pdf build/resume.pdf cat output "$(NAME).pdf"
+	cp build/resume.pdf "$(NAME) - Resume.pdf"
+	cp build/cover.pdf "$(NAME) - Cover Letter.pdf"
 
 
-resume:
-	pdflatex resume.tex
-	pdflatex resume.tex
-	rm -rfv *.aux
-	rm -rfv *.log
-	rm -rfv *.out
-	rm -rfv *.sta	
-	pdftk "$(NAME) - Cover Letter.pdf" resume.pdf cat output "$(NAME).pdf"
-	mv resume.pdf "$(NAME) - Resume.pdf"
+# I'll leave this here in case you decide that you want to use it.
+# resume:
+# 	pdflatex -output-directory build resume.tex
+# 	pdftk "$(NAME) - Cover Letter.pdf" build/resume.pdf cat output "$(NAME).pdf"
+# 	cp build/resume.pdf "$(NAME) - Resume.pdf"
+# 	drive push -no-prompt .
 
 
 cover:
-	pdflatex cover.tex
-	pdflatex cover.tex
-	rm -rfv *.aux
-	rm -rfv *.log
-	rm -rfv *.out
-	rm -rfv *.sta
-	pdftk cover.pdf "$(NAME) - Resume.pdf" cat output "$(NAME).pdf"
-	mv resume.pdf "$(NAME) - Cover Letter.pdf"
+	pdflatex -output-directory build cover.tex
+	pdftk build/cover.pdf "$(NAME) - Resume.pdf" cat output "$(NAME).pdf"
+	cp build/cover.pdf "$(NAME) - Cover Letter.pdf"
+	drive push -no-prompt .
 
 
-finish:
-	pdftk cover.pdf resume.pdf cat output "$(NAME).pdf"
-	mv resume.pdf "$(NAME) - Resume.pdf"
-	mv cover.pdf "$(NAME) - Cover Letter.pdf"
+edit-cover:
+	vim sections/cover_letter.tex
 
 
-.PHONY: clean
+.PHONY : clean
 clean:
-	rm -rfv *.aux
-	rm -rfv *.log
-	rm -rfv *.out
-	rm -rfv *.sta
-	rm -rfv *.pdf
+	# I am a lazy man; it turns out it is a lot easier to just
+	# remove and then remake the directory
+	rm -rfv build
+	mkdir build
