@@ -3,18 +3,14 @@ A (hopefully) simple and easy-to-use resume builder using the LaTeX compiler
 engine; built without the use of a complex .cls file.
 
 
-## 'Install'
-In terms of operating systems, this won't work on Windows. Sorry. Works on 
-macOS and Linux just fine, though, so if you're on Windows, I would recommend 
-getting WSL installed so that you can compile with ease. 
+## Install
+LaTeX is a requirement -- if you don't have it installed, I recommend 
+using [TinyTeX](https://github.com/rstudio/tinytex-releases) as it 
+is a quick install and relatively easy to get started with.
 
-(Unless you want to go the hard route; you do you bud.)
-
-If you don't have LaTeX installed, you should probably install it; otherwise, 
-I don't think you're going to get much use out of this. In terms of a TeX 
-engine, TinyTeX has a pretty good balance of minimalism and everything you need 
-to get started. See the project 
-[here](https://github.com/rstudio/tinytex-releases).
+With regards to external utilities, you'll need the following:
+ - pdftk (`pdftk-java` on Linux/macOS; whatever the Windows variant is)
+ - make (Linux/macOS specific; not required on Windows)
 
 In other TeX requirements, you'll need the following packages:
  - fontawesome5
@@ -22,11 +18,7 @@ In other TeX requirements, you'll need the following packages:
  - import
  - enumitem
  - svn-prov
-
-With regards to other utilities, `pdftk` is required in order to concatenate 
-the resulting generated pdf files together. `make` is used to help execute the 
-compiling commands. You can likely grab these from your package manager. (On 
-macOS, if you have Homebrew installed, grab the `pdftk-java` version.)
+These are provided with the `make init` command by default.
 
 This works as a base LaTeX project to help you get started. Just clone the 
 repository and edit what you need. Just make sure that the default text is 
