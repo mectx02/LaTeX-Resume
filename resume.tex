@@ -8,7 +8,7 @@
 %
 % Preamble
 %
-\documentclass[10.5pt]{article}
+\documentclass[10pt, letterpaper]{article}
 
 
 % Package Imports
@@ -26,6 +26,9 @@
 
 \usepackage{enumitem}
 
+\usepackage{fontspec}
+\setmainfont{IBM Plex Sans}
+
 %
 % Page/paragraph formatting
 %
@@ -38,7 +41,13 @@
 \pagestyle{empty}
 
 
-\newcommand{\split}{\vspace{0.4cm}}
+\newcommand{\split}{\vspace{0.5em}}
+\newcommand{\invsplit}{\vspace{-1.2em}}
+\newcommand{\pagebar}{
+    \vspace{-0.3cm}
+    \hrule
+    \vspace{0.1cm}
+}
 
 
 % Remove any possibility of indenting the paragraphs (we can change it
@@ -57,8 +66,8 @@
 
 % Change the bullet spacing so that there are no gaps before/after the start/end
 % of bullet items
-
 \setlist[itemize]{noitemsep, topsep=0pt, leftmargin=*}
+
 
 % 
 % Document Content
@@ -66,36 +75,32 @@
 
 \begin{document}
 
-
 \import{sections/}{name}
 \import{sections/}{contact}
 \import{sections/}{summary}
 
-
 \section{Education}
+\pagebar
 \import{sections/}{education}
 
+\invsplit
 \section{Experience}
+\pagebar
 \import{sections/}{employment}
 
+\invsplit
+\section{Projects}
+\pagebar
+\import{sections/}{projects}
+
+\invsplit
 \section{Awards}
+\pagebar
 \import{sections/}{awards}
 
-\section{Volunteer Work}
-\import{sections/}{volunteering}
-
-%\section{Certifications}
-%\import{sections/}{certifications}
-
+\invsplit
 \section{Skills}
+\pagebar
 \import{sections/}{skills}
-
-% \section{Projects}
-% \import{sections/}{projects}
-
-
-% \section{Activities}
-% \import{sections/}{activities}
-
 
 \end{document}

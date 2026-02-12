@@ -1,33 +1,31 @@
-NAME=MAKEFILE_SAYS_EDIT_ME
+NAME=Mitchell Case
 
 main:
 	if [ ! -d "build" ]; then mkdir build; fi
 	if [ ! -f "build/cover.pdf" ]; then \
-		pdflatex -output-directory build cover.tex; \
+		xelatex -output-directory build cover.tex; \
 	fi
-	pdflatex -output-directory build cover.tex
+	xelatex -output-directory build cover.tex
 	if [ ! -f "build/resume.pdf" ]; then \
-		pdflatex -output-directory build resume.tex; \
+		xelatex -output-directory build resume.tex; \
 	fi
-	pdflatex -output-directory build resume.tex
+	xelatex -output-directory build resume.tex
 	pdftk build/cover.pdf build/resume.pdf cat output "$(NAME).pdf"
 	cp build/resume.pdf "$(NAME) - Resume.pdf"
 	cp build/cover.pdf "$(NAME) - Cover Letter.pdf"
 
 
 # I'll leave this here in case you decide that you want to use it.
-# resume:
-# 	pdflatex -output-directory build resume.tex
-# 	pdftk "$(NAME) - Cover Letter.pdf" build/resume.pdf cat output "$(NAME).pdf"
-# 	cp build/resume.pdf "$(NAME) - Resume.pdf"
-# 	drive push -no-prompt .
+resume:
+	xelatex -output-directory build resume.tex
+	pdftk "$(NAME) - Cover Letter.pdf" build/resume.pdf cat output "$(NAME).pdf"
+	cp build/resume.pdf "$(NAME) - Resume.pdf"
 
 
 cover:
-	pdflatex -output-directory build cover.tex
+	xelatex -output-directory build cover.tex
 	pdftk build/cover.pdf "$(NAME) - Resume.pdf" cat output "$(NAME).pdf"
 	cp build/cover.pdf "$(NAME) - Cover Letter.pdf"
-	drive push -no-prompt .
 
 
 edit-cover:

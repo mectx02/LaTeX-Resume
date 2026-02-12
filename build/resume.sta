@@ -1,0 +1,26 @@
+\standalonepreambles
+\subpreamble{sections/name.tex}
+\usepackage {import}\usepackage {array}\usepackage {tabularx}
+\endsubpreamble
+\subpreamble{sections/contact.tex}
+\usepackage [subpreambles=true]{standalone}\usepackage {import}\usepackage {array}\usepackage {tabularx}
+\endsubpreamble
+\subpreamble{sections/summary.tex}
+
+\endsubpreamble
+\subpreamble{sections/education.tex}
+
+\endsubpreamble
+\subpreamble{sections/employment.tex}
+
+\endsubpreamble
+\subpreamble{sections/projects.tex}
+
+\endsubpreamble
+\subpreamble{sections/awards.tex}
+
+\endsubpreamble
+\subpreamble{sections/skills.tex}
+
+\endsubpreamble
+\endstandalonepreambles

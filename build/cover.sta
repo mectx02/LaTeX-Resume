@@ -1,0 +1,11 @@
+\standalonepreambles
+\subpreamble{sections/name.tex}
+\usepackage {import}\usepackage {array}\usepackage {tabularx}
+\endsubpreamble
+\subpreamble{sections/contact.tex}
+\usepackage [subpreambles=true]{standalone}\usepackage {import}\usepackage {array}\usepackage {tabularx}
+\endsubpreamble
+\subpreamble{sections/cover_letter.tex}
+\setlength {\parskip }{8pt}\newcommand {\email }{your\_email.address@domain.com}
+\endsubpreamble
+\endstandalonepreambles

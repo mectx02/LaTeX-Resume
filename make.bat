@@ -1,5 +1,5 @@
 @echo off
-set name=EDIT_ME!!!!
+set name=Mitchell Case
 
 echo "%~dp0"
 @REM goto exit
